@@ -151,7 +151,9 @@ public class LL {
     }
 
     //3.Merge Two Sorted LinkedLists
-    public void merge(){}
+    public void merge(){
+
+    }
     private class Node{
         private int val;
         private Node next;
