@@ -21,5 +21,10 @@ public class Main {
         System.out.println("30 Found at:"+list.search(30));
         list.display();
 
+//        questions
+//        1.insert using recursion
+        list.insertRec(88,2);
+        list.display();
+
     }
 }
