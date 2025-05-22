@@ -135,6 +135,23 @@ public class LL {
         return node;
     }
 
+    // 2.remove duplicates
+    public void removeDuplicates(){
+        Node node = head;
+        while(node.next!=null){
+            if(node.val==node.next.val){
+                node.next=node.next.next;
+                size--;
+            }else {
+            node=node.next;
+            }
+        }
+        tail=node;
+        tail.next=null;
+    }
+
+    //3.Merge Two Sorted LinkedLists
+    public 
     private class Node{
         private int val;
         private Node next;
