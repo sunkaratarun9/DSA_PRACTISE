@@ -49,7 +49,7 @@ public class Bstpractise {
     }
 
 
-    //isBalanced
+    //checking isBalanced
     public boolean isBalanced(){
         return balanced_helper(root);
     }
@@ -59,4 +59,25 @@ public class Bstpractise {
         }
         return Math.abs(height(node.left)-height(node.right))<=1  &&  balanced_helper(node.left) && balanced_helper(node.right);
     }
+
+
+    //displaying the tree
+    public void display(){
+        display_helper("Root Node: ",root);
+    }
+    public void display_helper(String details, Node node){
+        if(node==null){return;}
+        System.out.println(details+node.val);
+        display_helper("Left Child of "+node.val+" is: ",node.left);
+        display_helper("Right Child of "+node.val+" is: ",node.right);
+
+    }
+
+    //inserting multiple node at a time
+    public void populate(int[] arr){
+        for (int i :arr){
+            insert(i);
+        }
+    }
+
 }
