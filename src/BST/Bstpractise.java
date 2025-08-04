@@ -22,13 +22,15 @@ public class Bstpractise {
             return -1;
         return node.height;
     }
-
+    //Empty or Not
     public boolean isEmpty(){
         return root==null;
     }
 
+    //Insertion Into BST
     public void insert(int element){
-        root =insert(element,root);
+        //the final return is root
+        root = insert(element,root);
     }
     public Node insert (int element,Node node){
         if(node==null) {
@@ -44,5 +46,17 @@ public class Bstpractise {
         }
         node.height= Math.max(height(node.left),height(node.right))+1;;
         return node;
+    }
+
+
+    //isBalanced
+    public boolean isBalanced(){
+        return balanced_helper(root);
+    }
+    public boolean balanced_helper(Node node){
+        if(node==null){
+            return true;
+        }
+        return Math.abs(height(node.left)-height(node.right))<=1  &&  balanced_helper(node.left) && balanced_helper(node.right);
     }
 }
